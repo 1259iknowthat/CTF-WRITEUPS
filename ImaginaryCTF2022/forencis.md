@@ -67,7 +67,7 @@ Sau khi đến điểm này, mình nhận ra đây chính là địa điểm tro
 
 ![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/place.png "place")
 
-Vì thế mình ra ngoài điểm ghim trên bản đồ để lấy tọa độ, đồng thời làm tròn đến số thập phân thứ ba theo đề.
+Vì thế mình ra ngoài điểm ghim trên bản đồ để lấy tọa độ, đồng thời làm tròn đến số thập phân thứ ba theo đề. Có thể thấy, địa điểm "flag" khá gần với địa điểm nhà hàng mình tra lúc nãy :>>>
 
 ![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/toado.png "place")
 
@@ -105,6 +105,35 @@ Sau khi nhấp vào đường dẫn thì mình đã tới được playlist củ
 
 - FLAG: ictf{SPOTIFY_jAMMMMMM_78D5B4}
 ____
+
+**_Orge_**
+```
+Description
+
+What are you doing in my swamp?!
+
+Attachments
+
+docker pull ghcr.io/iciaran/ogre:ctf
+```
+Okay giờ chúng ta sẽ đến với thử thách tiếp theo - docker. Đề bài yêu cầu mình pull docker về nên mình pull về thử và dùng lệnh ```docker images``` để xem có image gì ở trỏng
+
+![pic]()
+
+Sau đó mình dùng lệnh ``` docker inspect``` để xuất các thông tin liên quan đến các objects như containers, volumes, network gì gì đó...
+
+![pic]()
+
+Mình tiếp tục xem thử coi có gì hấp dẫn hong và có thứ hấp dẫn thiệt :)))))))
+
+![pic]()
+
+Đây có lẽ là đoạn mã base64 khá là mờ ám, đã vậy còn có gì đó /secret. Vì thế mình quyết định giải mã base64 bằng công cụ [cyberchef](https://cyberchef.org/) khá là nổi tiếng.
+
+- FLAG: ictf{onions_have_layers_images_have_layers}
+
+___
+
 
 
 
