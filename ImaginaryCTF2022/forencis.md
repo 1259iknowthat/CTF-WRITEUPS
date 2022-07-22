@@ -52,7 +52,7 @@ Như trang web này đã hiển thị chính xác địa điểm của bức ả
 
 ![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/web.png "web")
 
-Do trang web sử dụng tiếng Nga, vì thế mình copy title và dịch ra được đoạn này:"Through the streets of Orvieto with details".
+Do trang web sử dụng tiếng Nga, vì thế mình copy title và dịch ra được đoạn này: "Through the streets of Orvieto with details".
 
 "Orvieto" có lẽ đây chính là nơi mà bức ảnh đã được chụp, để thu gọn phạm vị hơn nữa, mình tìm thông tin "La Pergola" đã xuất hiện trên tấm biển trong bức ảnh. Tadaaaa ~ 
 
@@ -65,9 +65,11 @@ Từ đây mình lên googlemap và search thông tin liên quan, sau đó bắt
 
 Sau khi đến điểm này, mình nhận ra đây chính là địa điểm trong bức ảnh.
 
-![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/toado.png "place")
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/place.png "place")
 
 Vì thế mình ra ngoài điểm ghim trên bản đồ để lấy tọa độ, đồng thời làm tròn đến số thập phân thứ ba theo đề.
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/toado.png "place")
 
 - FLAG: ictf{42.717_12.112}
 
