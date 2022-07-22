@@ -149,7 +149,7 @@ https://imaginaryctf.org/r/tTkud#corrupted.png
 ```
 Thử thách này cho chúng ta một file có lẽ là file png nhưng đã bị lỗi gì đó. Mình cho thử raw data của file này lên công cụ render của cyberchef thì ra hẳn đáp án
 
-![pic]()
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/improbus.png "improbus")
 
 - FLAG: ictf{fixed!_3f5ce751}
 
