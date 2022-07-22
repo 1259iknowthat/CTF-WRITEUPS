@@ -1,4 +1,6 @@
 # FORENCIS
+_những thử thách có WU-ed có nghĩa là mình đã đọc WU rồi mới giải_
+___
 **_unpuzzled4_**
 ```
 Description
@@ -134,6 +136,24 @@ Mình tiếp tục xem thử coi có gì hấp dẫn hong và có thứ hấp d�
 
 ___
 
+**_improbus_** _WU-ed_
+
+```
+Description
+
+Did Caesar like PNG files?
+
+Attachments
+
+https://imaginaryctf.org/r/tTkud#corrupted.png
+```
+Thử thách này cho chúng ta một file có lẽ là file png nhưng đã bị lỗi gì đó. Mình cho thử raw data của file này lên công cụ render của cyberchef thì ra hẳn đáp án
+
+![pic]()
+
+- FLAG: ictf{fixed!_3f5ce751}
+
+*thử thách khá là bủh bủh lmao**
 
 
 
