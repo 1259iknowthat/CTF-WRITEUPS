@@ -93,11 +93,11 @@ Hmmm, lại là một thử thách nữa liên quan tới user unpuzzled7 này. 
 
 Sau khi nhấp vào đường dẫn thì mình đã tới được playlist của anh chàng này. Thoạt nhìn có vẻ không có gì mờ ám cả nên mình thử vào xem cả hai playlist có gì thứ vị.
 
-![pic]()
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/rickroll.png "rickroll")
 
 Ở playlist đầu tiên chỉ là rickroll :))))))
 
-![pic]()
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/flag.png "music2")
 
 Ở playlist thứ hai, hình như cũng chả có gì đặc biệt. Mình đã kẹt ở đây khá lâu, mò đi mò lại cái playlists, rồi mò sang cả follower nhưng cũng chả thấy gì. Cho đến khi mình ăn cơm xong và quay lại thì thấy một điều khá là thú vị :>> các chữ cái đầu của các bài hát bỗng dưng ghép lại thành ICTF{. Hohohoo
 
