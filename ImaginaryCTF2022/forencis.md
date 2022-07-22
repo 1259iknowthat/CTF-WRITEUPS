@@ -1,0 +1,82 @@
+# FORENCIS
+**_unpuzzled4_**
+```
+Description
+
+THIS IS AN **OSINT** CHALLENGE
+
+It looks like unpuzzler7 has been getting into photography recently. 
+His pictures aren't very good though, you can't even tell what the location of the pictures are! 
+(To access this challenge you must join our discord server at https://discord.gg/ctf)
+```
+
+Đề bài yêu cầu chúng ta truy cập server discord theo đường dẫn. Sau khi mình đã vào được server thì mình đi tìm user unpuzzled7 và thấy được profile như sau:
+
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/profile.png "profile")
+
+Truy cập theo URL được gắn ở profile, mình đã được dẫn đến một trang web Flickr của user Melvin Wu:
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/flickr.png "flickr")
+
+Với bức ảnh đầu chỉ là rickroll :)))))) nên mình sang bức ảnh thứ hai và tìm thấy điều thú vị:
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/flickr2.png "flickr2")
+
+
+Mình nhấp phần thông tin EXIF và thấy 
+- FLAG: ictf{1mgur_d03sn't_cl3ar_3xif}
+
+___
+
+**_journey_**
+```
+ Description
+
+This is an **OSINT** challenge.
+
+Max49 went on a trip... can you figure out where? 
+The flag is ictf{latitude_longitude}, where both are rounded to three decimal places. 
+For example, ictf{-95.334_53.234}
+Attachments
+
+https://imaginaryctf.org/r/06FSz#IMG_2901.jpg
+```
+
+Đến với thử thách tiếp theo, đề bài đã cho mình một bức ảnh như sau:
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/journey.jpg "journey")
+
+Mình sử dụng yandex để tìm thông tin liên quan đến bức ảnh này và thấy vài điều thú vị.
+Như trang web này đã hiển thị chính xác địa điểm của bức ảnh đề bài cho:
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/web.png "web")
+
+Do trang web sử dụng tiếng Nga, vì thế mình copy title và dịch ra được đoạn này:"Through the streets of Orvieto with details".
+
+"Orvieto" có lẽ đây chính là nơi mà bức ảnh đã được chụp, để thu gọn phạm vị hơn nữa, mình tìm thông tin "La Pergola" đã xuất hiện trên tấm biển trong bức ảnh. Tadaaaa ~ 
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/search.png "search")
+
+Từ đây mình lên googlemap và search thông tin liên quan, sau đó bắt đầu street view
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/streetview.png "streetview")
+
+
+Sau khi đến điểm này, mình nhận ra đây chính là địa điểm trong bức ảnh.
+
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/toado.png "place")
+
+Vì thế mình ra ngoài điểm ghim trên bản đồ để lấy tọa độ, đồng thời làm tròn đến số thập phân thứ ba theo đề.
+
+- FLAG: ictf{42.717_12.112}
+
+___
+
+
+
+
+
+
+
+
