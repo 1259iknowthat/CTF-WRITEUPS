@@ -153,7 +153,7 @@ Thử thách này cho chúng ta một file có lẽ là file png nhưng đã b�
 
 - FLAG: ictf{fixed!_3f5ce751}
 
-*thử thách khá là bủh bủh lmao**
+*thử thách khá là bủh bủh lmao*
 
 
 
