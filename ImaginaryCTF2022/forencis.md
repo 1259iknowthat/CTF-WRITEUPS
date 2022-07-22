@@ -74,7 +74,34 @@ Vì thế mình ra ngoài điểm ghim trên bản đồ để lấy tọa độ
 ___
 
 
+**_unpuzzled3_**
+```
+Description
 
+THIS IS AN **OSINT** CHALLENGE
+
+unpuzzler7#6451 is back! I've heard that he's been listening to a lot of music lately. 
+Think that you might be able to find something? 
+(To access this challenge you must join our discord server at https://discord.gg/ctf)
+```
+
+Hmmm, lại là một thử thách nữa liên quan tới user unpuzzled7 này. Mình vừa nhớ lại thử thách đầu tiên, ở profile của unpuzzled7 không chỉ có đường dẫn Flickr mà còn có cả Spotify. Vì thế mình quyết định quay lại điều tra:
+
+![pic]()
+
+![pic]()
+
+Sau khi nhấp vào đường dẫn thì mình đã tới được playlist của anh chàng này. Thoạt nhìn có vẻ không có gì mờ ám cả nên mình thử vào xem cả hai playlist có gì thứ vị.
+
+![pic]()
+
+Ở playlist đầu tiên chỉ là rickroll :))))))
+
+![pic]()
+
+Ở playlist thứ hai, hình như cũng chả có gì đặc biệt. Mình đã kẹt ở đây khá lâu, mò đi mò lại cái playlists, rồi mò sang cả follower nhưng cũng chả thấy gì. Cho đến khi mình ăn cơm xong và quay lại thì thấy một điều khá là thú vị :>> các chữ cái đầu của các bài hát bỗng dưng ghép lại thành ICTF{. Hohohoo
+
+- FLAG: ictf{SPOTIFY_jAMMMMMM_78D5B4}
 
 
 
