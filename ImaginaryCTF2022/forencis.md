@@ -118,15 +118,15 @@ docker pull ghcr.io/iciaran/ogre:ctf
 ```
 Okay giờ chúng ta sẽ đến với thử thách tiếp theo - docker. Đề bài yêu cầu mình pull docker về nên mình pull về thử và dùng lệnh ```docker images``` để xem có image gì ở trỏng
 
-![pic]()
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/dockercmd.png "docker")
 
 Sau đó mình dùng lệnh ``` docker inspect``` để xuất các thông tin liên quan đến các objects như containers, volumes, network gì gì đó...
 
-![pic]()
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/docker.png "docker")
 
 Mình tiếp tục xem thử coi có gì hấp dẫn hong và có thứ hấp dẫn thiệt :)))))))
 
-![pic]()
+![pic](https://github.com/1259iknowthat/CTF-WRITEUPS/blob/main/Pictures/ictf2022/secretcipher.png "secretcipher")
 
 Đây có lẽ là đoạn mã base64 khá là mờ ám, đã vậy còn có gì đó /secret. Vì thế mình quyết định giải mã base64 bằng công cụ [cyberchef](https://cyberchef.org/) khá là nổi tiếng.
 
