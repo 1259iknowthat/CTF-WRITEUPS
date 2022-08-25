@@ -35,5 +35,5 @@ Extract theo password là "emyeukhoahoc***2003", chúng ta nhận được một
 
 ![](20220825173058.png)  
 
-**FLAG: CTF{1-l0ve-m4th-b9247d7608a7e63ae119982ff59db431}**
+### **FLAG: CTF{1-l0ve-m4th-b9247d7608a7e63ae119982ff59db431}**
 
