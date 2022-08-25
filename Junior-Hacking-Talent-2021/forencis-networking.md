@@ -13,4 +13,9 @@ Những manh mối ta có:
 - Access log của server btvn.kid.cyberjutsu-lab.tech
 - Trích xuất gói tin mạng đoạn chat giữa Minh và một người bạn
 ```
-![anh](D:\Downloads\Pictures\1.png)
+Sau khi tải các file đính kèm về, chúng ta nhận được file log và file pcap.
+
+Phân tích file pcap và follow TCP stream, chúng ta thấy được đoạn hội thoại giữa hai bạn. Sau đó đến stream thứ 4, chúng ta có được pass giải nén file bài tập như hình.
+
+![](20220825170202.png)  
+
