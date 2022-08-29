@@ -41,3 +41,5 @@ Final step, I logged into the server to get the flag. Run "auth" program to get 
 ![](20220829202453.png)  
 
 ## FLAG: ForSpirit{y0U_sh0uLD_b4Ck_Up_d4T4_r3Gul4RlY_572348aa19eaa992110006276f43e397} 
+
+~ **_H4PPY H4CK1NG_** ~
