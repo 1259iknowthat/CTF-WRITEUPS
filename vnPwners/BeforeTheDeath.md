@@ -16,7 +16,7 @@ First of all, I downloaded the file given in the description. Turns out, it was 
 
 I used this command to get a basic look about the system which later is WinXPSP2x86.
 
-Then I use `./vol -f /mnt/d/WSL_LAB/memory.raw --profile=WinXPSP2x86 pstree` to get a list of running process, because the description told us that there was a program call guessing_game
+Then I use `./vol -f /mnt/d/WSL_LAB/memory.raw --profile=WinXPSP2x86 pstree` to get a list of running processes, because the description told us that there was a program call guessing_game
 
 ![](20220829200926.png)  
 
