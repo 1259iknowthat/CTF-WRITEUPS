@@ -11,7 +11,7 @@ The challenge give us one compressed file and server to connect.
 
 I decided to decompressed it to see what inside. Then I found Dockerfile and server.py file.
 
-
+![Screenshot 2022-09-04 155220](https://user-images.githubusercontent.com/89141562/188305566-df9bfcdb-5123-476f-8c89-cf63b9e3af1a.png)
 
 So when we connect to the remote server, it will run server.py, let's see what inside.
 
@@ -42,7 +42,7 @@ As you can see, we must to input the filepath to the remote server in order to g
 
 "If you pass something like `~xxx/path/to/file`, ~xxx is expanded to the path of xxx's home directory. If you pass something like `~xxx/path/to/file`, ~xxx is expanded to the path of xxx's home directory." - Thanks to **_ptr-yudai_**. So I decided to look up passwd file by building up docker.
 
-
+![Screenshot 2022-09-04 153506](https://user-images.githubusercontent.com/89141562/188305576-fe067ec1-fd1f-4294-a8eb-0cd2075502d1.png)
 
 We will notice there's a line `sys:x:3:3:sys:/dev:/usr/sbin/nologin`. So we have the access to all file under /dev. Using `ls -la /dev`, I found this `lrwxrwxrwx 1 root root     13 Sep  4 08:09 fd -> /proc/self/fd`. So we will use file descriptor to get the flag.
 
@@ -60,7 +60,7 @@ When I connect to remote server, nothing went wrong. As a result, we can come to
 
 Here is the result:
 
-
+![Screenshot 2022-09-04 151554](https://user-images.githubusercontent.com/89141562/188305587-de4f6df2-e9ae-4a44-b606-64ceffbbc894.png)
 
 ## FLAG: CakeCTF{~USER_r3f3rs_2_h0m3_d1r3ct0ry_0f_USER}
 
