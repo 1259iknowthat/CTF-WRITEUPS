@@ -10,3 +10,4 @@
 |                            |   Mixed            | https://github.com/LeonGurin/T3N4CI0US-Escape-2022/tree/main/Before%20Porta%20arrives%20at%20the%20port!|
 |      Google CTF 2022       |   Mixed            | https://groups.google.com/g/google-ctf/c/BQG1LP8vuZ4?pli=1 |
 |      WMCTF 2022            |   Full             | WMCTF Discord Server |
+|      cakeCTF 2022          |                    |                      |
