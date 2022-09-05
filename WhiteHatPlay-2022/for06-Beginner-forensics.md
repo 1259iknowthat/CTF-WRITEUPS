@@ -13,11 +13,11 @@ Download file: https://drive.google.com/file/d/151mSsV5WKXq751UHAauTOx7Czfxkyqkt
 
 When I downloaded the file, the first look, it was like normal txt file but when I opened it up, it had PNG header.
 
-~picture~
+![Screenshot 2022-09-05 143939](https://user-images.githubusercontent.com/89141562/188395069-e6f1c867-ea6b-4d8d-b615-539ba9d6806c.png)
 
 After having corrected the extension of the file, I got this picture.
 
-~picture~
+![for06](https://user-images.githubusercontent.com/89141562/188395029-16746606-736a-4584-8951-e57e0b53b796.png)
 
 ## FLAG: WhiteHat{SummEr_1s_4_st3te_of_m1nd}
 
