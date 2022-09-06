@@ -63,7 +63,7 @@ I used Base64 decode, text decode with UTF-16LE and code tidy. So I noticed that
 
 ![](https://user-images.githubusercontent.com/89141562/188659529-2151b7d9-e3a2-4dbd-8ccf-03371f2d3068.png)
 
-It was just the end of the flag, I must find the head in those code. I had tried many variables, but `$rEianMEKgy` gave me this
+It was just the tail of the flag, I must find the head in those code. I had tried many variables, but `$rEianMEKgy` gave me this
 
 ![](https://user-images.githubusercontent.com/89141562/188659556-2921f00e-e362-4bbd-ab66-4bc1f44746ce.png)
 
