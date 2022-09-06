@@ -17,14 +17,14 @@ Sau khi tải các file đính kèm về, chúng ta nhận được file log và
 
 Phân tích file pcap và follow TCP stream, chúng ta thấy được đoạn hội thoại giữa hai bạn. Sau đó đến stream thứ 4, chúng ta có được pass giải nén file bài tập như hình.
 
-![20220825170202](https://user-images.githubusercontent.com/89141562/187448060-36a92679-2416-4a00-a477-548cf28091c6.png)
+![](https://user-images.githubusercontent.com/89141562/187448060-36a92679-2416-4a00-a477-548cf28091c6.png)
   
 
 Tiếp đến, vì website không thể truy cập được nữa, nên mình quyết định lục lọi file log. Do chúng ta đã có được pass giải nén nên file cần tìm là một file nén :v
 
 Mình sử dụng `grep -w "files"` trong quá trình đọc file để tìm chuỗi "files" và ra được kết quả như hình
 
-![20220825172345](https://user-images.githubusercontent.com/89141562/187448085-ae85a892-596e-4871-b0a8-7ae4a4afd5c4.png)
+![](https://user-images.githubusercontent.com/89141562/187448085-ae85a892-596e-4871-b0a8-7ae4a4afd5c4.png)
   
 
 Như các bạn đã thấy, có khá nhiều file zip khác nhau, nhưng chỉ duy nhất có một file với http status là 304 
@@ -35,7 +35,7 @@ Từ đó mình copy đoạn '/files/14ec09bb925ed43775d1f8c1b0c87a74.zip" vào 
 
 Extract theo password là "emyeukhoahoc***2003", chúng ta nhận được một file word, mở ra và thấy flag.
 
-![20220825173058](https://user-images.githubusercontent.com/89141562/187448118-f412d1b3-c142-4d94-ad12-5663f38ad0f7.png)
+![](https://user-images.githubusercontent.com/89141562/187448118-f412d1b3-c142-4d94-ad12-5663f38ad0f7.png)
   
 
 ### **FLAG: CTF{1-l0ve-m4th-b9247d7608a7e63ae119982ff59db431}**

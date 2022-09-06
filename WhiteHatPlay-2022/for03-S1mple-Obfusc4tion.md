@@ -11,11 +11,11 @@ Extract the given compressed file with the given password, we will have a .doc f
 
 Open it up and we see a macro. I had done a lot of research about macro in .doc file then I found [this](https://www.decalage.info/vba_tools).
 
-![Screenshot 2022-09-06 204603](https://user-images.githubusercontent.com/89141562/188659787-5c357edf-855a-4b63-a3bb-56165818a946.png)
+![Macro](https://user-images.githubusercontent.com/89141562/188659787-5c357edf-855a-4b63-a3bb-56165818a946.png)
 
 So we will use a tool call `olevba`. We have something like this.
 
-![Screenshot 2022-09-06 211824](https://user-images.githubusercontent.com/89141562/188659291-a3647f33-102b-437b-b0eb-504bc7f2f318.png)
+![](https://user-images.githubusercontent.com/89141562/188659291-a3647f33-102b-437b-b0eb-504bc7f2f318.png)
 
 I found a malicious content in the macro:
 
@@ -26,7 +26,7 @@ There's a lot of it so that I can't show you guys all sorry :'(
 
 Look likes it was powershell commands but was encoded with base64, so I put it to `cyberchef` to decode it and here is what I found. Very interesting:
 
-![Screenshot 2022-09-06 211846](https://user-images.githubusercontent.com/89141562/188659390-27fac218-3d8a-4fed-953b-63a53c04bf40.png)
+![](https://user-images.githubusercontent.com/89141562/188659390-27fac218-3d8a-4fed-953b-63a53c04bf40.png)
 
 ```powershell
 $EgRI9bjh5S = ('New-Tem' + 'p' + 'orar' + 'yFile')|& ( $pshOme[4] + $psHOmE[34] + 'X');
@@ -61,11 +61,11 @@ if ($mAMq5ixXLi   -gt 0)  {
 ```
 I used Base64 decode, text decode with UTF-16LE and code tidy. So I noticed that `$GLHNe0URoh` was a variable which was added some ASCII to it. Using `dcode`, I had this: `dGhlIHRhaWwgb2YgdGhlIGZsYWcgOiJfaHVzdGwzX3IzYWxfaGFyZH0i`. Then base64 again:
 
-![Screenshot 2022-09-06 211555](https://user-images.githubusercontent.com/89141562/188659529-2151b7d9-e3a2-4dbd-8ccf-03371f2d3068.png)
+![](https://user-images.githubusercontent.com/89141562/188659529-2151b7d9-e3a2-4dbd-8ccf-03371f2d3068.png)
 
 It was just the end of the flag, I must find the head in those code. I had tried many variables, but `$rEianMEKgy` gave me this
 
-![Screenshot 2022-09-06 211632](https://user-images.githubusercontent.com/89141562/188659556-2921f00e-e362-4bbd-ab66-4bc1f44746ce.png)
+![](https://user-images.githubusercontent.com/89141562/188659556-2921f00e-e362-4bbd-ab66-4bc1f44746ce.png)
 
 ## FLAG: Whitehat{hustl3_h4rd_hustl3_r3al_hard}
 
