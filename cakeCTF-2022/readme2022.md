@@ -1,7 +1,5 @@
 # **README 2022**
 
-### (This write up was written after the CTF event)
-
 ```
 nc misc.2022.cakectf.com 12022
 readme2022_80ade97026adcb7e3e8f6203ad1eab06.tar.gz
