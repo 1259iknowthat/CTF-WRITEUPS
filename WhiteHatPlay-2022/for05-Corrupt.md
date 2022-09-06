@@ -22,5 +22,5 @@ Scan it and there we go
 
 ![](https://user-images.githubusercontent.com/89141562/188395970-5a0be136-c53f-46ae-8699-5d062f0bbfbe.png)
 
-# FLAG: WhiteHat{4a5y_W4rmup_ch4lleng3_f0r_SUMMER_RACEEE}
+## FLAG: WhiteHat{4a5y_W4rmup_ch4lleng3_f0r_SUMMER_RACEEE}
 
