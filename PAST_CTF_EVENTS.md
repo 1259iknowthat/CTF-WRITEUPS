@@ -11,3 +11,5 @@
 |      Google CTF 2022       |   Mixed            | https://groups.google.com/g/google-ctf/c/BQG1LP8vuZ4?pli=1 |
 |      WMCTF 2022            |   Full             | WMCTF Discord Server |
 |      cakeCTF 2022          |                    |                      |
+|      SekaiCTF 2022         |                    |                      |
+|      WannaGame Freshman 2022   |                |                      |
