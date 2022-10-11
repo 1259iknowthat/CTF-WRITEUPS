@@ -13,7 +13,7 @@ just_stego hint3: i love RGB with LSB
 
 ~pic~
 
-I think this is the hardest challenge in Forensics LMAO. "Clueless" - That just kept repeating in my head for few days xD
+I think this is the hardest challenge in Forensics (in my opinion) LMAO. "Clueless" - That had just kept repeating in my head for few days xD. I had stuck for many hours. I'm so noob, sadge :(
 
 First of all, I used `binwalk` to extract some contents in the image. There was actually 1 PNG file in it.
 
@@ -38,7 +38,23 @@ Processing: challenge.jpg
 |*|
 ```
 
-Open it up in `paint.net` software, I noticed there were some colors square
+Open it up in `paint.net` software, I noticed there were some color squares on top left conner.
+
+~pic~
+
+According to the third hint, I use a tool from cyberchef: `Extract LSB`. 
+
+~pic~
+
+I chose RGB pattern and Row order based on the colors line. That's the second part of the flag.
+
+The first part is mentioned by the second hint. We need to "think" out of the box which means the JPG image has longer length than what we see. After doing some searching methods, I found this [site](https://blog.cyberhacktics.com/hiding-information-by-changing-an-images-height/).
+
+From what the author said in the blog, we can come to the following conclusion: `01 8D 04 41` is the length and width hex values. Just simply change length values to something bigger like `06 90`, you can have the whole picture with flag in it.
+
+~pic~
+
+## FLAG: W1{see_you_in_Wanna.W^n1357}
 
 
 

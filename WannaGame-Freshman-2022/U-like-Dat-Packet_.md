@@ -9,11 +9,11 @@ Once again, just look at the title then we have the hint : UDP. I filtered out U
 
 ~pic~
 
-As you can see, UDP packets with destination port is 25522 have data length, which is decimal values. I decided to dump out these contents by using `Export Packet Dissections`, then grep those data bytes out. But before doing that, I must use different filter. In wireshark sections, we can see ICMP packets, which repeat the previous's data length. It will be very sussy if you dump those shitty out so I used this filter: `udp.port == 25522 && !icmp`. 
+As you can see, UDP packets with destination port is 25522 have data length, which is decimal values. I decided to dump out these contents by using `Export Packet Dissections`, then grep those data bytes out. But before doing that, I must use different filter. In wireshark sections, we can see ICMP packets, which repeat the previous packet's data length. It will be very sussy if you dump those shitty out so I used this filter: `udp.port == 25522 && !icmp`. 
 
 ~pic~
 
-This is how I dumped out decimal values after using `Export Packet Dissections`:
+This is how I dumped out decimal values after using `Export Packet Dissections` (you can use `tshark` instead of doing this):
 
 ```
 ┌──(kali㉿devilmachine)-[/mnt/d/WSL_LAB/Workplace/uit]
