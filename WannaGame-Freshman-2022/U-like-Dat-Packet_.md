@@ -13,9 +13,31 @@ As you can see, UDP packets with destination port is 25522 have data length, whi
 
 ~pic~
 
-The dumped data:
+This is how I dumped out decimal values after using `Export Packet Dissections`:
 
 ```
+┌──(kali㉿devilmachine)-[/mnt/d/WSL_LAB/Workplace/uit]
+└─$ cat test.txt | head
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    192.168.219.130       192.168.219.128       UDP      179    25135 → 25522 Len=137
+
+Frame 1: 179 bytes on wire (1432 bits), 179 bytes captured (1432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_48:ea:bb (00:0c:29:48:ea:bb), Dst: VMware_7c:7c:f0 (00:0c:29:7c:7c:f0)
+Internet Protocol Version 4, Src: 192.168.219.130, Dst: 192.168.219.128
+User Datagram Protocol, Src Port: 25135, Dst Port: 25522
+Data (137 bytes)
+
+0000  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+
+┌──(kali㉿devilmachine)-[/mnt/d/WSL_LAB/Workplace/uit]
+└─$ cat test.txt | head | grep "Data ("
+Data (137 bytes)
+
+┌──(kali㉿devilmachine)-[/mnt/d/WSL_LAB/Workplace/uit]
+└─$ cat test.txt | grep "Data (" > bruh.txt
+
+┌──(kali㉿devilmachine)-[/mnt/d/WSL_LAB/Workplace/uit]
+└─$ cat bruh.txt
 Data (137 bytes)
 Data (80 bytes)
 Data (78 bytes)
@@ -31,11 +53,11 @@ Data (68 bytes)
 ...
 ```
 
-Delete unnecessary strings, put it on cyberchef to transfer to readable text. Here is the result UwU
+We need to delete unnecessary strings, put it on cyberchef to transfer to readable text. Here is the result UwU
 
 ~pic~
 
-At this point, I did not realize that the dumped out had no 0 byte packets so that the PNG image was corrupted. I had to do the job again, added some 0 bytes to it. The final result :( 
+At this point, I did not realize that the dump had no 0 byte packets so that the PNG image was corrupted. I had to do the job again, added some 0 bytes into it. The final result :( 
 
 ~pic~ 
 

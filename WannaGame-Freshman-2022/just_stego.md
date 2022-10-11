@@ -38,7 +38,7 @@ Processing: challenge.jpg
 |*|
 ```
 
-Open it up in `paint.net` software
+Open it up in `paint.net` software, I noticed there were some colors square
 
 
 
