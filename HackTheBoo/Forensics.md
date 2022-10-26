@@ -79,7 +79,7 @@ wb = bytes.fromhex("".join(data))
 wf = open('sus','wb')
 wf.write(wb)
 ```
-
+## FLAG: HTB{M4g1c_c4nn0t_pr3v3nt_d4t4_br34ch}
 ___
 # **Halloween Invitation**
 ```
