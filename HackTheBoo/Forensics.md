@@ -159,7 +159,10 @@ for i in adu:
     hehe += chr(int(i))
 #print(hehe)
 #bruh = flag.replace(" ","")
-#print(bruh)
-#lmao = bytes.fromhex(flag)
 print(base64.b64decode(hehe).decode("UTF-8"))
 ```
+## FLAG: HTB{5up3r_345y_m4cr05}
+
+___
+# **POOF**
+
