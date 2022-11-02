@@ -166,3 +166,8 @@ print(base64.b64decode(hehe).decode("UTF-8"))
 ___
 # **POOF**
 
+## FLAG: HTB{n3v3r_tru5t_4ny0n3_3sp3c14lly_dur1ng_h4ll0w33n}
+
+___
+# **Downgrade**
+## FLAG: HTB{4n0th3r_d4y_4n0th3r_d0wngr4d3...}
