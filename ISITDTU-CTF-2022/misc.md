@@ -195,6 +195,50 @@ ___
 A virus killed my flag file, my python3.8 was only abled to save a part of it, please help me with your powerful python3.10
 ```
 
+Final challenge, we got three files, one is final output of xor function, one is umcompleted part, one is encode fucntion file. let's take a look at the python file:
+
+```py
+from PIL import Image
+import random, time
+
+def xor(a):
+	return a[0] ^ a[1]
+
+def xor_tuple(a, b):
+	return tuple(i for i in map(xor, zip(*[a, b])))
+
+def rgba2int(rgba: tuple):
+	ret = 0
+	for i in range(3, -1, -1):
+		ret += rgba[i] << 8*(3 - i)
+	return ret
+
+def int2rgba(n):
+	r, g, b, a = tuple([(n >> 8*i) & 0xff for i in range(3, -1, -1)])
+	return (r, g, b, a)
+
+img = Image.open('flag.png')
+
+random.seed(time.time())
+
+px = img.load()
+x_len, y_len = img.size
+
+new = Image.new('RGBA', (x_len, y_len), 'white')
+px1 = new.load()
+
+for y in range(y_len):
+	for x in range(x_len):
+		rand = random.getrandbits(32)
+		rr, rg, rb, ra = int2rgba(rand)
+		r, g, b, a = px[x, y]
+		new_pix = xor_tuple((rr, rg, rb, ra), (r, g, b, a))
+		px1[x, y] = new_pix
+
+new.save('out.png')
+```
+From what I have learnt in a few hours, I wrote decode function:
+
 ```py
 from PIL import Image
 from randcrack import RandCrack
@@ -272,5 +316,54 @@ for y in range(0, y_len):
 		
 flag.save('flag.png')
 ```
+Quick explaining: 
 
-## FLAG: 
+So we have a xor function, int to rgba values, rgba values to int numbers, open file, etc:
+```py
+def xor(a):
+	return a[0] ^ a[1]
+
+def xor_tuple(a, b):
+	return tuple(i for i in map(xor, zip(*[a, b])))
+
+def rgba2int(rgba: tuple):
+	ret = 0
+	for i in range(3, -1, -1):
+		ret += rgba[i] << 8*(3 - i)
+	return ret
+
+def int2rgba(n):
+	r, g, b, a = tuple([(n >> 8*i) & 0xff for i in range(3, -1, -1)])
+	return (r, g, b, a)
+
+img = Image.open('flag.png')
+
+random.seed(time.time())
+
+px = img.load()
+x_len, y_len = img.size
+
+new = Image.new('RGBA', (x_len, y_len), 'white')
+px1 = new.load()
+```
+
+But that's not so important, they are just for encoding image. If you know xor function, this should be easy. If we have a ^ b = c, we will also have this c ^ b = a, or c ^ a = b!
+So all we have to do, was just reverse the code xd. Let's focus on the next function:
+
+```py
+for y in range(y_len):
+	for x in range(x_len):
+		rand = random.getrandbits(32)
+		rr, rg, rb, ra = int2rgba(rand)
+		r, g, b, a = px[x, y]
+		new_pix = xor_tuple((rr, rg, rb, ra), (r, g, b, a))
+		px1[x, y] = new_pix
+```
+
+As you can see, at every pixel of the image (we have 720x720), it will take a RANDOM 32 bit number to generate a rgba value. So in order to crack this, we will use [`randcrack`](https://github.com/tna0y/Python-random-module-cracker) - a python module that support us to do this thing :D
+
+Here is the result:
+
+~pic~
+
+## FLAG: ISITDTU{DC_DC34s3d_h4v3_y0u_r34d?}
