@@ -9,11 +9,11 @@ Find me and say a greeting in Discord
 
 After joining the server, I looked up every places, every corners then I saw those emojis.
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201653459-09f62f6f-f057-4791-bc11-f167423aec6a.png)
 
 I decided to "zoom" it out in the browser. Here's the result:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201653735-ad088f05-b7af-457a-b318-6ac333692de1.png)
 
 ## FLAG: ISITDTU{Welcome_to_ISITDTU-CTF-2022_You_find_me}
 
@@ -29,21 +29,21 @@ Format flag: ISITDTU{LOCATION-CITY}
 
 Here's the picture which were given to us:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201653844-2940ffb7-3013-43aa-b46f-6935db394e7f.jpg)
 
 Before the hint was released, it was too hard to tell where this was. But it became so easy with the hint lmao.
 
 Opening google map, searching for Tuyen Quang in Viet Nam then we had this:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201654224-c6dcdc58-b0f6-4684-9af0-6a7547fdefec.png)
 
 As you can see, there is just one big river in Tuyen Quang so that I decided to use Google Street View to look up where was the riverbank in the picture. Suddenly I had this:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201654937-d2d5f591-9c1d-4dad-838a-8dc8e98cfbe9.png)
 
 But it's not correct. We need to move right a little bit! Then I saw Den Ha is the nearest location which I need, here is the result:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655087-3c718881-206f-45c0-bfbf-ffe1ef9520f5.png)
 
 So I guess the place is Den Ha in Tuyen Quang. Bang! Correct answer!
 
@@ -65,9 +65,11 @@ This challenge cost me about 4-5 hours to solve it. Damn I'm still noob at this 
 
 So what we have here? Two names: Pablo Sherlock and Johny Panker. I had looked up Sherlock in the internet but had nothing. Johny Panker was different, he had a Facebook profile:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655209-61ce18fa-df06-4a6a-8709-59b2dc4f051d.png)
 
 Look like we are in the right way. After sitting for a few hours, I downloaded the "dragon" picture and extract it's metadata. Found something interesting:
+
+![](https://user-images.githubusercontent.com/89141562/201655259-ec083bb5-6355-4fc2-b00f-66bdd1284b74.png)
 
 ```
 ┌──(kali㉿devilmachine)-[/mnt/d/WSL_LAB/Workplace/isitdtu]
@@ -95,11 +97,13 @@ Profile CMM Type                : Little CMS
 
 Have you seen it? If not, just look at the `Artist` field, we have bodramsilvader as username, very suspicious. I used `sherlock` on it but got nothing. Then I found him on Linkedin (by accident) :D
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655318-197aa9e0-2f1e-4e31-90f0-ae3cc28debcc.png)
 
 Viewing HTB's certificate gave me the flag:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655387-8de9e8d7-f341-493b-ab68-a8619cec18a1.png)
+
+![](https://user-images.githubusercontent.com/89141562/201655410-1138b0f2-8d65-4ed7-875d-6490ee19447a.png)
 
 ## FLAG: ISITDTU{L1nk3d1n_4nT!_Sh3RL0ck}
 
@@ -113,24 +117,25 @@ We need to find out his whereabouts and arrest him ASAP
 ```
 Let's continue the story with this challenge. So, we have his Linkedin profile. I decided to stalk on his activities and noticed he has a Gitlab project :DD. That's interesting...
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655496-a5d7822d-f265-44a9-b30d-8adbaf09057d.png)
 
 Stay focuse on the picture, you can see there's an ID in it! Nice, now we can get the project by this `https://gitlab.com/projects/40976143`. You can read it from [here](https://docs.gitlab.com/ee/user/project/working_with_projects.html)
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655572-42c20a55-47e7-4b8e-a961-fa12dad74295.png)
 
 There was a link in readme file. Opened it up then we had this sheet:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655622-23118cbe-2bb3-4e05-9887-b1e525eaec1f.png)
 
 I decided to download it and unhide the Contact field because it was one of the hidden fields.
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655691-1ed141f9-de89-4e32-afdd-a48cee68d508.png)
 
 Got the encoded flag, put it in [basecrack](https://basecrack.herokuapp.com/)
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655755-2fda51e7-c178-4dbf-bb48-762fd7f6a304.png)
 
+![](https://user-images.githubusercontent.com/89141562/201655803-fe9a707f-d105-4b90-9020-0ac59fa89e42.png)
 
 ## FLAG: ISITDTU{Ju5t_90_&_U_w1lL_C0m3} 
 
@@ -145,7 +150,7 @@ Please help me analyze what data he got.
 
 Opened up the pcap file, I noticed there was some strange URL. Filtered the file:
 
-~pic~
+![](https://user-images.githubusercontent.com/89141562/201655968-028f067c-f256-4048-9555-34905d13c3e3.png)
 
 Decode those URLs:
 
@@ -174,7 +179,6 @@ for i in f:
         lst.append(data)
 for i in lst:
     print(chr(int(i)), end="")
-
 ```
 
 Tada~
@@ -194,6 +198,9 @@ ___
 ```
 A virus killed my flag file, my python3.8 was only abled to save a part of it, please help me with your powerful python3.10
 ```
+![out](https://user-images.githubusercontent.com/89141562/201656169-f9f65ae8-4bbc-4068-8da7-53ef4ac92b84.png)
+
+![part](https://user-images.githubusercontent.com/89141562/201656188-4ac88b4e-d299-4ea6-9dba-f697566ed084.png)
 
 Final challenge, we got three files, one is final output of xor function, one is umcompleted part, one is encode fucntion file. let's take a look at the python file:
 
@@ -364,6 +371,6 @@ As you can see, at every pixel of the image (we have 720x720), it will take a RA
 
 Here is the result:
 
-~pic~
+![flag](https://user-images.githubusercontent.com/89141562/201656265-f4020f01-06f6-4075-b0e3-0c5bce2b55d2.png)
 
 ## FLAG: ISITDTU{DC_DC34s3d_h4v3_y0u_r34d?}
