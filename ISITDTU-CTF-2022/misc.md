@@ -1,10 +1,21 @@
 # **Welcome**
+This is the second time that I have participated in a Vietnamese's CTF event. This time I played with my team and we had tried our best. I have learnt a lot too.
+
+There're so much things we have been through but I can't tell you all. Let's begin with the first challenge!
 
 ```
 Find me and say a greeting in Discord
 ```
 
-## FLAG:
+After joining the server, I looked up every places, every corners then I saw those emojis.
+
+~pic~
+
+I decided to "zoom" it out in the browser. Here's the result:
+
+~pic~
+
+## FLAG: ISITDTU{Welcome_to_ISITDTU-CTF-2022_You_find_me}
 
 ___
 # **Find**
@@ -12,8 +23,29 @@ ___
 ```
 A friend of mine went on a trip in November 1st and sent me a picture of the landscape there, but when I asked, he didn't remember. 
 Please help me find the place in the photo. 
-Format flag :ISITDTU{LOCATION-CITY}
+Format flag: ISITDTU{LOCATION-CITY}
+- Hint: a famous place in Tuyen Quang
 ```
+
+Here's the picture which were given to us:
+
+~pic~
+
+Before the hint was released, it was too hard to tell where this was. But it became so easy with the hint lmao.
+
+Opening google map, searching for Tuyen Quang in Viet Nam then we had this:
+
+~pic~
+
+As you can see, there is just one big river in Tuyen Quang so that I decided to use Google Street View to look up where was the riverbank in the picture. Suddenly I had this:
+
+~pic~
+
+But it's not correct. We need to move right a little bit! Then I saw Den Ha is the nearest location which I need, here is the result:
+
+~pic~
+
+So I guess the place is Den Ha in Tuyen Quang. Bang! Correct answer!
 
 ## FLAG: ISITDTU{DENHA_TUYENQUANG}
 
@@ -29,6 +61,46 @@ During our investigation, we noticed that his account looks like a clone.
 So I need your help to find out the true identity of this thief
 ```
 
+This challenge cost me about 4-5 hours to solve it. Damn I'm still noob at this xd
+
+So what we have here? Two names: Pablo Sherlock and Johny Panker. I had looked up Sherlock in the internet but had nothing. Johny Panker was different, he had a Facebook profile:
+
+~pic~
+
+Look like we are in the right way. After sitting for a few hours, I downloaded the "dragon" picture and extract it's metadata. Found something interesting:
+
+```
+┌──(kali㉿devilmachine)-[/mnt/d/WSL_LAB/Workplace/isitdtu]
+└─$ exiftool wtf.jpg
+ExifTool Version Number         : 12.49
+File Name                       : wtf.jpg
+Directory                       : .
+File Size                       : 83 kB
+File Modification Date/Time     : 2022:11:13 00:29:45+07:00
+File Access Date/Time           : 2022:11:14 17:37:52+07:00
+File Inode Change Date/Time     : 2022:11:13 21:05:35+07:00
+File Permissions                : -rwxrwxrwx
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Resolution Unit                 : inches
+X Resolution                    : 96
+Y Resolution                    : 96
+Exif Byte Order                 : Big-endian (Motorola, MM)
+Artist                          : bodramsilvader
+Profile CMM Type                : Little CMS
+...
+```
+
+Have you seen it? If not, just look at the `Artist` field, we have bodramsilvader as username, very suspicious. I used `sherlock` on it but got nothing. Then I found him on Linkedin (by accident) :D
+
+~pic~
+
+Viewing HTB's certificate gave me the flag:
+
+~pic~
+
 ## FLAG: ISITDTU{L1nk3d1n_4nT!_Sh3RL0ck}
 
 ___
@@ -39,6 +111,26 @@ ___
 After finding out the true identity of Johnny Panker. We discovered that he was also planning to develop a malicious project. 
 We need to find out his whereabouts and arrest him ASAP
 ```
+Let's continue the story with this challenge. So, we have his Linkedin profile. I decided to stalk on his activities and noticed he has a Gitlab project :DD. That's interesting...
+
+~pic~
+
+Stay focuse on the picture, you can see there's an ID in it! Nice, now we can get the project by this `https://gitlab.com/projects/40976143`. You can read it from [here](https://docs.gitlab.com/ee/user/project/working_with_projects.html)
+
+~pic~
+
+There was a link in readme file. Opened it up then we had this sheet:
+
+~pic~
+
+I decided to download it and unhide the Contact field because it was one of the hidden fields.
+
+~pic~
+
+Got the encoded flag, put it in [basecrack](https://basecrack.herokuapp.com/)
+
+~pic~
+
 
 ## FLAG: ISITDTU{Ju5t_90_&_U_w1lL_C0m3} 
 
@@ -51,11 +143,46 @@ An anonymous Script Kiddie recently used many hacking tools to break into differ
 Please help me analyze what data he got.
 ```
 
+Opened up the pcap file, I noticed there was some strange URL. Filtered the file:
+
+~pic~
+
+Decode those URLs:
+
+```
+...
+/dashboard.php?id=1 AND (SELECT 2460 FROM (SELECT(SLEEP(2-(IF(ORD(MID((SELECT IFNULL(CAST(username AS NCHAR),0x20) FROM myDB.users ORDER BY id LIMIT 4,1),3,1))!=111,0,2)))))pFUv)
+
+/dashboard.php?id=1 AND (SELECT 2460 FROM (SELECT(SLEEP(2-(IF(ORD(MID((SELECT IFNULL(CAST(username AS NCHAR),0x20) FROM myDB.users ORDER BY id LIMIT 4,1),4,1))>48,0,2)))))pFUv)
+
+/dashboard.php?id=1 AND (SELECT 2460 FROM (SELECT(SLEEP(2-(IF(ORD(MID((SELECT IFNULL(CAST(username AS NCHAR),0x20) FROM myDB.users ORDER BY id LIMIT 4,1),4,1))>1,0,2)))))pFUv)
+```
+
+There will be nothing suspicious if you take a quick look, but there is! Can you see those operations like `>, =, !=`? That's the thing we need. There're a lots of `>` or `=`, but `!=` is less. I decided to extract the contents following after this operation by that simple script.
+
 ```py
-f = open('haha.txt', 'r').readlines()
+from urllib.parse import unquote
+lst = []
+f = open('test.txt', 'r').readlines()
 for i in f:
-    data = i.split("!=")[-1].split(",")[0]
-    print(chr(int(data)), end= "")
+    decode = unquote(i)
+    if '!=' not in decode:
+        data = decode.strip(decode)
+    else:
+        data = decode.split("!=")[-1].split(",")[0]
+    if data.isnumeric():
+        lst.append(data)
+for i in lst:
+    print(chr(int(i)), end="")
+
+```
+
+Tada~
+
+```
+┌──(kali㉿devilmachine)-[/mnt/d/WSL_LAB/Workplace/isitdtu]
+└─$ python script.py
+3innformation_schemaperformance_schemamyDB1users04emailidpasswordusername5admin@uwu.com1admin@adminadminnguyendt@uwu.com2ISITDTU{W3llC0M3_T0_ISITDTU_2@22}to^happy@uwu.com3abc#123sangngocjorosensei@uwu.com4123321yugeiego@uwu.com528102003ego
 ```
 
 ## FLAG: ISITDTU{W3llC0M3_T0_ISITDTU_2@22}
