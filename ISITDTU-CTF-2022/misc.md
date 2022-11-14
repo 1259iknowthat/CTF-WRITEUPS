@@ -105,10 +105,14 @@ px_part = part.load()
 ### Encode function:
 # for y in range(y_len):
 # 	for x in range(x_len):
-# 		rand = random.getrandbits(32) # random a 32bit number
-# 		rr, rg, rb, ra = int2rgba(rand) # convert it to r g b a values
-# 		r, g, b, a = px[x, y] # get r g b a values from flag image
-# 		new_pix = xor_tuple((rr, rg, rb, ra), (r, g, b, a)) # xor r g b a values of flag image and random number
+#       # random a 32bit number
+# 		rand = random.getrandbits(32) 
+#       # convert it to r g b a values
+# 		rr, rg, rb, ra = int2rgba(rand) 
+#       # get r g b a values from flag image
+# 		r, g, b, a = px[x, y] 
+#       # xor r g b a values of flag image and random number
+# 		new_pix = xor_tuple((rr, rg, rb, ra), (r, g, b, a)) 
 # 		px1[x, y] = new_pix
 
 for y in range(1):
